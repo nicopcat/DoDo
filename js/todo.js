@@ -71,7 +71,6 @@ $(function () {
             if (e.which === 13) {
                 if ($(this).html() !== "") {
                     var id = $(this).siblings("a").attr("id");
-                    console.log(id);
                     var local = getData();
                     //splice(index,len,[item]) 以替换为新内容
                     local.splice(id, 1, { "title": $(this).html(), "done": false });
@@ -116,7 +115,8 @@ $(function () {
                 todocount++;
             }
         });
-
+        $("#todocount").html(todocount);
+        $("#donecount").html(donecount);
         if (todocount == 0) {
             $(".note").show();
             if (donecount !== 0) {
@@ -126,10 +126,6 @@ $(function () {
             $(".note").hide();
             $(".great").hide();
         }
-        $("#todocount").html(todocount);
-        $("#donecount").html(donecount);
-
-
     };
 
 })
