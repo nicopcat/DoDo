@@ -124,6 +124,7 @@ $(function () {
             }
         } else {
             $(".note").hide();
+            $(".great").hide();
         }
         $("#todocount").html(todocount);
         $("#donecount").html(donecount);
