@@ -75,6 +75,7 @@ span {
 ol, ul {
     padding: 0;
     list-style: none;
+    outline: none;
 }
 
 li input {
@@ -88,6 +89,12 @@ li input {
 
 p {
     margin: 0;
+    outline: none;
+}
+
+li:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 214, .7);
 }
 
 li p input {
@@ -178,7 +185,7 @@ img {
 }
 
 .great {
-    padding: 5px 26px;
+    padding: 5px 0;
     font-size: 10px;
     color: green;
     font-weight: 550;
@@ -187,14 +194,15 @@ img {
 .ico {
     width: 2em;
     height: 2em;
-    margin: 3% 3% 1% 0;
+    /* margin: 3% 3% 1% 0; */
     padding: 0;
 }
 
+/* 
 .col-xs-3 {
     margin: 1% 1% 1% 0;
     display: inline-block;
-}
+} */
 
 .navbar-brand {
     display: inline-block;
@@ -211,4 +219,25 @@ img {
 .done, .todo {
     padding-bottom: 2px;
     border-bottom: 2px solid rgb(84, 87, 88);
+}
+
+.d-flex {
+    margin-top: 2%;
+}
+
+.dodo {
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.btn {
+    width: 30%;
+    margin-left: 2%;
+}
+
+.note {
+    color: rgb(114, 109, 109);
+    font-size: .5em;
+    font-style: oblique;
+    cursor: none;
 }
