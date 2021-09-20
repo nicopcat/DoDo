@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>todo!ist—最简单的待办事项列表</title>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/todo.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- <header>
+        <section>
+            <img src="icon/icon-removebg-preview.png" alt="">
+            <label for="title">todo!ist</label>
+            <input type="text" id="title" name="title" placeholder="添加一个任务..." required="required" autocomplete="off" />
+        </section>
+    </header> -->
+
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-2 col-xs-3"></div>
+                    <div class="col-md-3">
+                        <img src="icon/favicon-1.jpg" class="ico" alt="icon">
+                        <a class="navbar-brand" href="#">DoDo</a>
+                    </div>
+                    <div class="col-md-4">
+                        <form class="d-flex">
+                            <input id="title" class="form-control me-2" type="text" placeholder="Add One Task.."
+                                aria-label="Text">
+                            <button class="btn btn-outline-success" type="">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xs-1 col-md-2"></div>
+            <div class="col-md-10">
+                <section class="">
+                    <h2 class="todo">✊正在进行<p class="great"></p> <span id="todocount"></span></h2>
+                    <ol id="todolist" class="demo-box">
+
+                    </ol>
+                    <h2 class="done">✔ 已经完成 <span id="donecount"></span></h2>
+                    <ul id="donelist">
+
+                    </ul>
+                </section>
+            </div>
+            <div class="col-xs-1 col-md-2"></div>
+        </div>
+    </div>
+
+    <footer>
+        Copyright &copy; 2021 dodo.github.io
+    </footer>
+
+</body>
+
+</html>
