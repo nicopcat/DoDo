@@ -1,9 +1,11 @@
 $(function () {
     loadData();
+
     $("#title").on("keydown", function (e) {
         //1.按下回车 把完整数据储存在localStorage
         //储存数据的格式 var todolist = [{title:"xxx", done:false}]
-        if (e.keyCode === 13) {
+        //e.which或者e.keyCode
+        if (e.which === 13) {
             if ($(this).val() == "") {
                 return false;
             } else {
@@ -18,6 +20,8 @@ $(function () {
             }
         };
     });
+
+
 
     $("form").on("click", ".btn", function () {
         if ($("#title").val() == "") {
@@ -54,16 +58,36 @@ $(function () {
         //修改数据 获取当前input的索引号
         var index = $(this).siblings("a").attr("id");
         data[index].done = $(this).prop("checked");
-
         //保存在本地存储
         saveData(data);
         //重新渲染页面
         loadData();
     });
 
+    //修改
+    $("ol").on("click", "p", function () {
+        $(this).attr("contenteditable", true);
+        $(this).on("keydown", function (e) {
+            if (e.which === 13) {
+                if ($(this).html() !== "") {
+                    var id = $(this).siblings("a").attr("id");
+                    console.log(id);
+                    var local = getData();
+                    //splice(index,len,[item]) 以替换为新内容
+                    local.splice(id, 1, { "title": $(this).html(), "done": false });
+                    saveData(local);
+                    loadData();
+                } else {
+                    return false;
+                }
+            };
+        });
+    });
 
 
 
+
+    //====函数封装====
     function getData() {
         var datas = localStorage.getItem("todolist");
         if (datas !== null) {
@@ -83,26 +107,28 @@ $(function () {
         $("ol,ul").empty();
         var todocount = donecount = 0;
         $.each(data, function (i, domE) {
-
             if (domE.done) {
-                $("ul").prepend($("<li><input type='checkbox' checked='checked'><p>" + domE.title + "</p><a href='javascript:;' id= '" + i + "'></a></li>"));
+                $("ul").prepend($("<li><input type='checkbox' checked='checked'><p>" + domE.title + "</p><a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
                 donecount++;
 
             } else {
-                $("ol").prepend($("<li><input type='checkbox'><p>" + domE.title + "</p><a href='javascript:;' id= '" + i + "'></a></li>"));
+                $("ol").prepend($("<li><input type='checkbox'><p>" + domE.title + "</p><a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
                 todocount++;
-
             }
+        });
 
-        })
+        if (todocount == 0) {
+            $(".note").show();
+            if (donecount !== 0) {
+                $(".great").html('貌似任务全都完成辣👍').show();
+            }
+        } else {
+            $(".note").hide();
+        }
         $("#todocount").html(todocount);
         $("#donecount").html(donecount);
-        if (todocount == 0) {
-            $(".great").html('貌似任务全都完成辣👍');
-            $(".great").show();
-        } else {
-            $(".great").hide();
-        }
+
 
     };
+
 })
