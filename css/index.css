@@ -15,11 +15,6 @@ header {
     background: rgba(0, 96, 191, 0.88);
 }
 
-section {
-    margin: 0;
-    /* height: 500px; */
-}
-
 label {
     float: left;
     width: 110px;
@@ -80,7 +75,7 @@ ol, ul {
 
 li input {
     position: absolute;
-    top: 5px;
+    top: 8px;
     left: 10px;
     width: 22px;
     height: 22px;
@@ -88,6 +83,7 @@ li input {
 }
 
 p {
+    height: 38px;
     margin: 0;
     outline: none;
     white-space: nowrap;
@@ -103,7 +99,7 @@ ellipse li:hover {
 }
 
 li p input {
-    top: 3px;
+    top: 10px;
     left: 40px;
     width: 70%;
     height: 20px;
@@ -113,8 +109,8 @@ li p input {
 }
 
 li {
-    height: 32px;
-    line-height: 32px;
+    height: 38px;
+    line-height: 38px;
     background: #fff;
     position: relative;
     margin-bottom: 10px;
@@ -135,7 +131,7 @@ ul li {
 
 li a {
     position: absolute;
-    top: 6px;
+    top: 9px;
     right: 5px;
     display: inline-block;
     width: 20px;
@@ -215,8 +211,12 @@ img {
 }
 
 .container, .container-fluid {
-    padding: 0;
-    margin: 1%;
+    /* margin: 0; */
+    max-width: 100%;
+}
+
+.container-fluid {
+    padding-left: 0px;
 }
 
 .done, .todo {
@@ -229,7 +229,7 @@ img {
 }
 
 .dodo {
-    margin-left: 1%;
+    margin-left: 2%;
     line-height: 40px;
     height: 40px;
 }
@@ -250,10 +250,11 @@ img {
     width: auto;
 }
 
-.justify-content-center {
+/* .justify-content-center {
     margin: 0;
-}
+} */
 
 .row {
     --bs-gutter-x: 0;
+    max-width: 200%;
 }
