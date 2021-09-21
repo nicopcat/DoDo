@@ -90,9 +90,14 @@ li input {
 p {
     margin: 0;
     outline: none;
+    white-space: nowrap;
+    overflow: hidden;
+    /* text-overflow一定要和overflow: hidden;
+    、white-space: nowrap; */
+    一起使用，不能单独用 text-overflow: clip;
 }
 
-li:hover {
+ellipse li:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 214, .7);
 }
@@ -178,10 +183,10 @@ footer a {
 img {
     width: 40px;
     height: 40px;
-    position: relative;
-    float: left;
-    margin-top: 8px;
-    margin-left: -1%;
+    /* position: relative;
+    float: left; */
+    /* margin-top: 8px;
+    margin-left: -1%; */
 }
 
 .great {
@@ -192,28 +197,26 @@ img {
 }
 
 .ico {
-    width: 2em;
-    height: 2em;
-    /* margin: 3% 3% 1% 0; */
     padding: 0;
+    line-height: 40px;
+    height: 40px;
+    float: left;
 }
-
-/* 
-.col-xs-3 {
-    margin: 1% 1% 1% 0;
-    display: inline-block;
-} */
 
 .navbar-brand {
     display: inline-block;
-    font-size: 1.8em;
+    font-size: 32px;
     padding: 0;
+    margin: 0;
+    line-height: 40px;
+    height: 40px;
+    padding-left: 3%;
     padding-top: 2%;
-    padding-left: 5%;
 }
 
-.container-fluid {
+.container, .container-fluid {
     padding: 0;
+    margin: 1%;
 }
 
 .done, .todo {
@@ -226,8 +229,9 @@ img {
 }
 
 .dodo {
-    margin-top: 1%;
     margin-left: 1%;
+    line-height: 40px;
+    height: 40px;
 }
 
 .btn {
@@ -240,4 +244,16 @@ img {
     font-size: .5em;
     font-style: oblique;
     cursor: none;
+}
+
+.col-sm-10 {
+    width: auto;
+}
+
+.justify-content-center {
+    margin: 0;
+}
+
+.row {
+    --bs-gutter-x: 0;
 }
