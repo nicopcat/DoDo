@@ -84,6 +84,11 @@ $(function () {
     });
 
     //时间
+
+
+
+
+    //====函数封装====
     function getFormatDate() {
         var nowDate = new Date();
 
@@ -91,11 +96,8 @@ $(function () {
         var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
         return month + "月" + date + "日";
     }
-    var str = getFormatDate();
-    $("em").text(str);
 
 
-    //====函数封装====
     function getData() {
         var datas = localStorage.getItem("todolist");
         if (datas !== null) {
@@ -116,7 +118,7 @@ $(function () {
         var todocount = donecount = 0;
         $.each(data, function (i, domE) {
             if (domE.done) {
-                $("ul").prepend($("<li><input type='checkbox' checked='checked'><p>" + domE.title + "</p><a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
+                $("ul").prepend($("<li><input type='checkbox' checked='checked'><p>" + domE.title + "</p><em id='date'>1</em><a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
                 donecount++;
 
             } else {
@@ -124,6 +126,9 @@ $(function () {
                 todocount++;
             }
         });
+
+        var str = getFormatDate();
+        $("em").text(str);
         $("#todocount").html(todocount);
         $("#donecount").html(donecount);
         if (todocount == 0) {
