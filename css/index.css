@@ -89,8 +89,8 @@ p {
     white-space: nowrap;
     overflow: hidden;
     /* text-overflow一定要和overflow: hidden;
-    、white-space: nowrap; */
-    一起使用，不能单独用 text-overflow: clip;
+    、white-space: nowrap;一起使用，不能单独用 */
+     text-overflow: clip;
 }
 
 ellipse li:hover {
@@ -258,4 +258,12 @@ img {
     padding: 1% 0;
     --bs-gutter-x: 0;
     max-width: 200%;
+}
+
+em{
+    position: absolute;
+    top: 2px;
+    right: 30px;
+    font-size: 8px;
+    color: rgba(18, 100, 39, 0.8);
 }

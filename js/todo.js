@@ -83,7 +83,16 @@ $(function () {
         });
     });
 
+    //时间
+    function getFormatDate() {
+        var nowDate = new Date();
 
+        var month = nowDate.getMonth() + 1 < 10 ? "0" + (nowDate.getMonth() + 1) : nowDate.getMonth() + 1;
+        var date = nowDate.getDate() < 10 ? "0" + nowDate.getDate() : nowDate.getDate();
+        return month + "月" + date + "日";
+    }
+    var str = getFormatDate();
+    $("em").text(str);
 
 
     //====函数封装====
@@ -111,7 +120,7 @@ $(function () {
                 donecount++;
 
             } else {
-                $("ol").prepend($("<li><input type='checkbox'><p>" + domE.title + "</p><a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
+                $("ol").prepend($("<li><input type='checkbox'><p>" + domE.title + "</p><em id='date'>1</em> <a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
                 todocount++;
             }
         });
