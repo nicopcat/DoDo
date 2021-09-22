@@ -120,13 +120,12 @@ $(function () {
             if (domE.done) {
                 $("ul").prepend($("<li><input type='checkbox' checked='checked'><p>" + domE.title + "</p><em id='date'></em><a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
                 donecount++;
-                var str = getFormatDate();
-                $("em").text(str);
+                // var str = getFormatDate();
+                // $("em").text(str);
             } else {
                 $("ol").prepend($("<li><input type='checkbox'><p>" + domE.title + "</p><em id='date'></em> <a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
                 todocount++;
-                var str = getFormatDate();
-                $("em").text(str);
+
             }
         });
 
