@@ -118,11 +118,11 @@ $(function () {
         var todocount = donecount = 0;
         $.each(data, function (i, domE) {
             if (domE.done) {
-                $("ul").prepend($("<li><input type='checkbox' checked='checked'><p>" + domE.title + "</p><em id='date'>1</em><a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
+                $("ul").prepend($("<li><input type='checkbox' checked='checked'><p>" + domE.title + "</p><em id='date'></em><a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
                 donecount++;
 
             } else {
-                $("ol").prepend($("<li><input type='checkbox'><p>" + domE.title + "</p><em id='date'>1</em> <a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
+                $("ol").prepend($("<li><input type='checkbox'><p>" + domE.title + "</p><em id='date'></em> <a href='javascript:;' id= '" + i + "'></a></li>")).fadeIn();
                 todocount++;
             }
         });
